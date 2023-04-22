@@ -10,5 +10,7 @@
   <p>Opinion：<%= @book.body %></p>
 
 <%= link_to "edit", edit_book_path(@book.id) %>
-
+<% if @book.user == current_user %>
+    <%= link_to "delete", book_path(@book), method: :delete %>
+  <% end %>
 </div>

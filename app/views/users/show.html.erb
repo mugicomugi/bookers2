@@ -49,10 +49,23 @@
 
       <a href="">show</a>
       
-    </main>
     
     
-    <%= yield %>
+     <% @books.each do |book| %>
+  
+      <div>
+        <%= link_to user_path(book.user_id) do %>
+        <%= image_tag book.user.get_profile_image(100,100) %>
+        <% end %>
+        
+        <p>Title：<%= book.title %></p>
+        <p>Opinion：<%= book.body %></p>
+        
+      </div>
+     <% end %>
+
+     </main>
+    
   </body>
 </html>
 
