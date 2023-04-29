@@ -7,6 +7,13 @@
 <h2>Opinion</h2>
 
 <% @books.each do |book| %>
+
+<%= render 'users/user', user: current_user %>
+
+<div class="container">  <!-- この行を追加 -->
+  <div class="row">      <!-- この行を追加 -->
+    <table class="table table-striped">
+
 <tr>
     <td>
        <%= book.title %> 
