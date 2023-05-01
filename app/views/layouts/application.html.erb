@@ -20,7 +20,7 @@
     <%= link_to root_path do %>
     <span>Books</span>
     <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -83,8 +83,8 @@
   </div>
 </header>
     <%= yield %>
-  </body>
   
+  <footer>
   <div class="container mt-5">
   	<div class="row">
     	<div class="mx-auto">
@@ -93,5 +93,5 @@
     </div>
   </div>
 </footer>
-  
+</body> 
 </html>

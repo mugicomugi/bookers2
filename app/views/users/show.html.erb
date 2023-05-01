@@ -1,32 +1,22 @@
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Bookers2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+    <div class="container">
+      <div class="row">
    <p id="notice"><%= notice %></p>
-   <%= render 'users/user', user: current_user %>
- 
+   <div class="col-md-3">
+   <%= render 'users/user', user: current_user, book: @book %>
+   </div> 
     
-      <% if @book.errors.any? %>
-      <%= @book.errors.count %>件のエラーが発生しました
-  <ul>
-       <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
    <div class="col-md-8 offset-md-1">
-    <h2>Books</h2>
-    <div>
+         <% if @book.errors.any? %>
+        <%= @book.errors.count %>件のエラーが発生しました
+    <ul>
+         <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <br>
+      <h2>Books</h2>
+    
     <table class="table table-hover table-inverse">
       <thead>
         <tr>
@@ -39,22 +29,19 @@
       <tbody>
       <tr>
       <td>
-        <%= image_tag @book.user.get_profile_image(100, 100) %>
+        <%= image_tag @user.get_profile_image(100, 100) %>
       </td>
       <td>
-      <p>name：<%= @book.user.name %></p>
+      <p><%= @book.title %></p>
       </td>
       <td>
-      <p>Title：<%= @book.title %></p>""
-      </td>
-      <td>
-      <p>Opinion：<%= @book.body %></p>
+      <p><%= @book.body %></p>
       </td> 
-      </tr
+      </tr>
     </tbody>
-  </div>  
-  </body>
-</html>
+    </table>
+  </div> 
+</div>
 
 
 

@@ -4,7 +4,10 @@
   <div class="col-md-3">
     <%= render 'users/user', book: @book_new, user: @user %>
   </div>  
+  
   <div class="col-md-8 offset-md-1">
+   <br>
+   <br>
     <h2>Books</h2>
     <div>
     <table class="table table-hover table-inverse">
@@ -19,8 +22,7 @@
       <tbody>
       <tr>
       <td>
-        <%= image_tag @book.user.get_profile_image(100, 100) %>
-        <%= @book.user.name %>
+        <%= image_tag @book.user.get_profile_image(100, 100) %><%= @book.user.name %>
       </td>
       <td>
       <%= @book.title %>
