@@ -1,13 +1,12 @@
-    <div class="container">
-      <div class="row">
-   <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
    <div class="col-md-3">
    <%= render 'users/user', user: current_user, book: @book %>
    </div> 
     
    <div class="col-md-8 offset-md-1">
-         <% if @book.errors.any? %>
-        <%= @book.errors.count %>件のエラーが発生しました
+        <% if @book.errors.any? %>
+        <%= @book.errors.count %> errors prohibited this obj from being saved:
     <ul>
          <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -32,7 +31,7 @@
         <%= image_tag @user.get_profile_image(100, 100) %>
       </td>
       <td>
-      <p><%= @book.title %></p>
+      <p><%= link_to @book.title, book_path(@book.id) %></p>
       </td>
       <td>
       <p><%= @book.body %></p>
